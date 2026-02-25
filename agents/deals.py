@@ -55,7 +55,13 @@ class ScrapedDeal:
         self.url = entry["links"][0]["href"]
         stuff = requests.get(self.url).content
         soup = BeautifulSoup(stuff, "html.parser")
-        content = soup.find("div", class_="content-section").get_text()
+        content_div = soup.find("div", class_="content-section")
+
+        if not content_div:
+            self.log("Content section not found on page")
+            return None  # or continue
+
+        content = content_div.get_text()
         content = content.replace("\nmore", "").replace("\n", " ")
         if "Features" in content:
             self.details, self.features = content.split("Features", 1)

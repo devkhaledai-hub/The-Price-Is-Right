@@ -3,13 +3,14 @@ from typing import List, Dict
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 from agents.agent import Agent
-
+from groq import Groq
+import os
 
 class FrontierAgent(Agent):
     name = "Frontier Agent"
     color = Agent.BLUE
 
-    MODEL = "gpt-4o-mini"
+    # MODEL = "gpt-4o-mini"
 
     def __init__(self, collection):
         """
@@ -17,8 +18,10 @@ class FrontierAgent(Agent):
         And setting up the vector encoding model
         """
         self.log("Initializing Frontier Agent")
-        self.client = OpenAI()
-        self.MODEL = "gpt-5.1"
+        # self.client = OpenAI()
+        # self.MODEL = "gpt-5.1"
+        self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+        self.MODEL = "llama-3.3-70b-versatile"
         self.log("Frontier Agent is setting up with OpenAI")
         self.collection = collection
         self.model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
@@ -87,8 +90,7 @@ class FrontierAgent(Agent):
         response = self.client.chat.completions.create(
             model=self.MODEL,
             messages=self.messages_for(description, documents, prices),
-            seed=42,
-            reasoning_effort="none",
+            seed=42
         )
         reply = response.choices[0].message.content
         result = self.get_price(reply)
