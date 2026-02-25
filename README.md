@@ -3,7 +3,9 @@
 An agentic AI system that scans online deal feeds, estimates product fair value using an ensemble of models, and surfaces high-discount opportunities in a Gradio app.
 <img width="1349" height="625" alt="image" src="https://github.com/user-attachments/assets/3fe23641-ff9a-4467-9d10-2e4bb3e101b0" />
 
-<img width="1020" height="574" alt="image" src="https://github.com/user-attachments/assets/6415228a-6d91-481f-82ea-7b68ca0f444a" />
+## Agent Workflows
+<img width="1536" height="1024" alt="Agent workflows" src="https://github.com/user-attachments/assets/f28b6220-97a6-4ce7-a609-c9e98667ecc8" />
+
 
 ## What this project does
 
