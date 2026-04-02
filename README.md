@@ -1,7 +1,10 @@
 # The Price Is Right Project
 
 An agentic AI system that scans online deal feeds, estimates product fair value using an ensemble of models, and surfaces high-discount opportunities in a Gradio app.
-<img width="1349" height="625" alt="image" src="https://github.com/user-attachments/assets/3fe23641-ff9a-4467-9d10-2e4bb3e101b0" />
+
+
+https://github.com/user-attachments/assets/b49d15ff-9890-4da3-9884-fb12510585e2
+
 
 ## Agent Workflows
 <img width="1536" height="1024" alt="Agent workflows" src="https://github.com/user-attachments/assets/f28b6220-97a6-4ce7-a609-c9e98667ecc8" />
